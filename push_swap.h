@@ -6,23 +6,22 @@
 /*   By: taalmeid <taalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:31:06 by taalmeid          #+#    #+#             */
-/*   Updated: 2025/12/10 18:05:29 by taalmeid         ###   ########.fr       */
+/*   Updated: 2025/12/13 19:45:42 by taalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <limits.h>
 #ifndef PUSH_SWAP_H
-#def PUSH_SWAP_H
+#define PUSH_SWAP_H
+#endif
 
 typedef struct s_data
 {
-    int value;
-    int position;
-    int push_price;
-    int final_index;
-    bool keep_a;
-    bool cheapest;
-    bool above;
+    int *arr;
+    int size;
+    int capacity;
+            
     struct  s_data *target;
     struct  s_data *next;
     struct  s_data *prev;

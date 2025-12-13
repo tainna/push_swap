@@ -6,7 +6,7 @@
 /*   By: taalmeid <taalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 16:00:48 by taalmeid          #+#    #+#             */
-/*   Updated: 2025/12/10 18:21:13 by taalmeid         ###   ########.fr       */
+/*   Updated: 2025/12/11 15:08:58 by taalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void parsing(char *str)
     {
         
     }
-
-
 }
 
 void sa(t_data *d)
