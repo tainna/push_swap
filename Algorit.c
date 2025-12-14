@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   Algorit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taalmeid <taalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 15:31:06 by taalmeid          #+#    #+#             */
-/*   Updated: 2025/12/14 17:24:01 by taalmeid         ###   ########.fr       */
+/*   Created: 2025/12/14 17:24:57 by taalmeid          #+#    #+#             */
+/*   Updated: 2025/12/14 18:45:33 by taalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <limits.h>
-#include "../printf"
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
-#endif
+#include "push_swap.h"
 
-typedef struct s_data
+int is_sorted(t_data *a)
 {
-    int *arr;
-    int size;
-    int capacity;
-            
-    struct  s_data *target;
-    struct  s_data *next;
-    struct  s_data *prev;
-}   t_data;
+    int i;
+
+    i = 0;
+    while(i < a->size - 1)
+    {
+        if(a->arr[i] > a->arr[i + 1])
+            return(0);
+        i++;
+    }
+    return(1);
+}

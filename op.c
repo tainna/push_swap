@@ -1,33 +1,69 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   op.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: taalmeid <taalmeid@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/14 17:22:44 by taalmeid          #+#    #+#             */
+/*   Updated: 2025/12/14 18:49:15 by taalmeid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "push_swap.h"
 
-static void shift(int *arr, int size, int direction)
+void    pb(t_data *a, t_data *b)
 {
-    int i;
-
-    if(direction == 1)
-    {
-        i == size;
-        while(i > 0)
-        {
-            arr[i] = arr[i - 1];
-            i--;
-        }
-    }
+    push(a, b);
+    ft_printf("pb");
 }
 
-void    pb(t_data **a, t_data **b)
+void    pa(t_data *a, t_data *b)
 {
-    int i;
-    int j;
-    t_data tmp;
+    push(b, a);
+    ft_printf("pa");
+}
 
-    i = 0;
-    j = 0;
-    while(a[i] && b[j])
-    {
-        a->data = tmp;
-        b[j] = tmp;
-        free(a->data);
+void    sa(t_data *a)
+{
+    swap(a);
+    ft_printf("sa");
+}
 
-    }
+void    sa(t_data *b)
+{
+    swap(b);
+    ft_printf("sb");
+}
+
+void    ra(t_data *a)
+{
+    rotate(a);
+    ft_printf("ra");
+}
+
+void    rb(t_data *b)
+{
+    rotate(b);
+    ft_printf("rb");
+}
+
+void    rra(t_data  *a)
+{
+    rrotate(a);
+    ft_printf(rra);
+}
+
+void    rrb(t_data  *b)
+{
+    rrotate(b);
+    ft_printf(rrb);
+}
+
+void    rrr(t_data *a, t_data *b)
+{
+    rra(a);
+    rrb(b);
+    ft_printf("rrr");
 }
