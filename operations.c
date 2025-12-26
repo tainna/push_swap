@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taalmeid <taalmeid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tainna <tainna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 16:00:48 by taalmeid          #+#    #+#             */
-/*   Updated: 2025/12/14 17:12:35 by taalmeid         ###   ########.fr       */
+/*   Updated: 2025/12/26 17:28:07 by tainna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void shift(int *arr, int size, int direction)
+void shift(int *arr, int size, int direction)
 {
     int i;
 
@@ -36,7 +36,7 @@ static void shift(int *arr, int size, int direction)
     }
 }
 
-static void push(t_data *src, t_data *dst)
+void push(t_data *src, t_data *dst)
 {
     int val;
 
@@ -52,7 +52,7 @@ static void push(t_data *src, t_data *dst)
     
 }
 
-static void swap(t_data *src)
+void swap(t_data *src)
 {
     int val;
 
@@ -64,7 +64,7 @@ static void swap(t_data *src)
     src->arr[1] = val;    
 }
 
-static void rotate(t_data *src)
+void rotate(t_data *src)
 {
     int val;
 
@@ -76,7 +76,7 @@ static void rotate(t_data *src)
     src->arr[src->size - 1] = val;    
 }
 
-static void rrotate(t_data *src)
+void rrotate(t_data *src)
 {
     int val;
 
@@ -84,9 +84,10 @@ static void rrotate(t_data *src)
         return;
 
     val = src->arr[src->size - 1];
-    shift(src->arr, src->size, 1);
+    shift(src->arr, src->size - 1, 1);
     src->arr[0] = val;    
 }
+
 
 
 

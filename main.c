@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taalmeid <taalmeid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tainna <tainna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:31:20 by taalmeid          #+#    #+#             */
-/*   Updated: 2025/12/13 19:38:22 by taalmeid         ###   ########.fr       */
+/*   Updated: 2025/12/26 15:46:07 by tainna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "../ft_printf/ft_printf.h"
+#include "../libft/libft.h"
 
 int main(int ac, char **av)
 {
     t_data *a = NULL;
-    t_data *b = NULL;
-
+   
     char **tokens = NULL;
     int need_free = 0;
 
@@ -25,7 +26,7 @@ int main(int ac, char **av)
        ft_printf("Error\n"); //inserir o printf nas ref
         return (1);
     }
-    if (ac == 2)
+    else if (ac == 2)
     {
         tokens = ft_split(av[1], ' ');
         need_free = 1;
@@ -38,9 +39,7 @@ int main(int ac, char **av)
 
     if (init_stack(&a, tokens, need_free) == -1)
         return 1;
-
-    //algoritmo bla blabla
-
+    algoritm(a);
     free(a->arr);
     free(a);
     if (need_free)

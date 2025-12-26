@@ -1,5 +1,6 @@
 
 #include "push_swap.h"
+#include "../libft/libft.h"
 
 static long ft_atol (char *str)
 {
