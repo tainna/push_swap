@@ -6,7 +6,7 @@
 /*   By: taalmeid <taalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:24:57 by taalmeid          #+#    #+#             */
-/*   Updated: 2026/01/04 17:08:14 by taalmeid         ###   ########.fr       */
+/*   Updated: 2026/01/04 17:55:14 by taalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	is_five(t_data *a, t_data *b)
 void	algoritm(t_data *a)
 {
 	t_data	*b;
-	
+
 	if (is_sorted(a))
 		return ;
 	b = malloc(sizeof(t_data));
@@ -100,7 +100,6 @@ void	algoritm(t_data *a)
 	b->arr = malloc(sizeof(int) * a->capacity);
 	b->size = 0;
 	b->capacity = a->capacity;
-	
 	if (a->size == 2)
 		sa(a);
 	else if (a->size == 3)

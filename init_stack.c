@@ -6,7 +6,7 @@
 /*   By: taalmeid <taalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 15:45:35 by taalmeid          #+#    #+#             */
-/*   Updated: 2026/01/04 16:46:45 by taalmeid         ###   ########.fr       */
+/*   Updated: 2026/01/04 17:55:12 by taalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,11 @@ int	init_stack(t_data **dst, char **tokens, int need_free)
 	int		i;
 
 	s = malloc(sizeof(t_data));
-	if (count_tokens(tokens) == 0 || !s)
+	if (!s)
 		return (-1);
-	s->arr = malloc(sizeof(int) * count_tokens(tokens));
-	if (!s->arr)
+	s->capacity = count_tokens(tokens);
+	s->arr = malloc(sizeof(int) * s->capacity);
+	if (!(s->arr) || !(s->capacity))
 		return (free(s), -1);
 	s->size = 0;
 	i = -1;
