@@ -1,43 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op.c                                               :+:      :+:    :+:   */
+/*   op2.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taalmeid <taalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 17:22:44 by taalmeid          #+#    #+#             */
-/*   Updated: 2026/01/04 16:12:07 by taalmeid         ###   ########.fr       */
+/*   Created: 2026/01/04 16:12:18 by taalmeid          #+#    #+#             */
+/*   Updated: 2026/01/04 16:37:02 by taalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pb(t_data *a, t_data *b)
+void	rb(t_data *b)
 {
-	push(a, b);
-	ft_printf("pb\n");
+	rotate(b);
+	ft_printf("rb\n");
 }
 
-void	pa(t_data *a, t_data *b)
+void	rra(t_data *a)
 {
-	push(b, a);
-	ft_printf("pa\n");
+	rrotate(a);
+	ft_printf("rra\n");
 }
 
-void	sa(t_data *a)
+void	rrb(t_data *b)
 {
-	swap(a);
-	ft_printf("sa\n");
+	rrotate(b);
+	ft_printf("rrb\n");
 }
 
-void	sb(t_data *b)
+void	rrr(t_data *a, t_data *b)
 {
-	swap(b);
-	ft_printf("sb\n");
+	rrotate(a);
+	rrotate(b);
+	ft_printf("rrr\n");
 }
 
-void	ra(t_data *a)
+void	rr(t_data *a, t_data *b)
 {
 	rotate(a);
-	ft_printf("ra\n");
+	rotate(b);
+	ft_printf("rr\n");
 }

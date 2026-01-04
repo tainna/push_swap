@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: taalmeid <taalmeid@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/01/04 15:46:01 by taalmeid          #+#    #+#              #
+#    Updated: 2026/01/04 16:35:21 by taalmeid         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	= push_swap
 
 CC		= cc
@@ -10,7 +22,11 @@ SRCS	= main.c \
 		  sort.c \
 		  init_stack.c \
 		  operations.c \
-		  utilits.c
+		  utilits.c \
+		  op2.c \
+		  sort_utilits.c \
+		  move_utilits.c
+
 
 OBJS	= $(SRCS:.c=.o)
 

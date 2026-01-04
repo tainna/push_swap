@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/* */
-/* :::      ::::::::   */
-/* push_swap.h                                        :+:      :+:    :+:   */
-/* +:+ +:+         +:+     */
-/* By: tainna <tainna@student.42.fr>              +#+  +:+       +#+        */
-/* +#+#+#+#+#+   +#+           */
-/* Created: 2025/12/09 15:31:06 by taalmeid          #+#    #+#             */
-/* Updated: 2025/12/23 16:00:00 by tainna           ###   ########.fr       */
-/* */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: taalmeid <taalmeid@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/04 15:46:30 by taalmeid          #+#    #+#             */
+/*   Updated: 2026/01/04 16:51:53 by taalmeid         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
@@ -17,12 +17,11 @@
 /* INCLUDES                                  */
 /* ************************************************************************** */
 
+# include "../ft_printf/ft_printf.h"
+# include "../libft/libft.h"
+# include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h>
-# include "../libft/libft.h"
-# include "../ft_printf/ft_printf.h"
-
 
 /* ************************************************************************** */
 /* STRUCTS                                   */
@@ -33,7 +32,7 @@ typedef struct s_data
 	int	*arr;
 	int	size;
 	int	capacity;
-}	t_data;
+}		t_data;
 
 /* ************************************************************************** */
 /* INIT / PARSING                                */
@@ -66,7 +65,6 @@ void	rrr(t_data *a, t_data *b);
 /* ************************************************************************** */
 /* INTERNAL STACK MANIPULATION                          */
 /* ************************************************************************** */
-/* (Usadas internamente pelos comandos sa, pa, etc) */
 
 void	push(t_data *src, t_data *dst);
 void	swap(t_data *src);
@@ -93,26 +91,20 @@ void	mark_lis(int *keep, int *prev, int end);
 /* TURKEY                                    */
 /* ************************************************************************** */
 
-void	turkey(t_data *a, t_data *b, int *keep);
 void	rotate_keep(int *keep, int size);
 
 /* ************************************************************************** */
 /* COST / TARGET / MOVE                                */
 /* ************************************************************************** */
 
+long	ft_atol(const char *str);
+int		ft_abs(int n);
+int		cost(int pos, int size);
 int		find_min(t_data *a);
 int		find_max(t_data *a);
 int		find_index(t_data *a, int value);
 int		find_target_pos(t_data *a, int value);
-
-int		cost(int pos, int size);
-void	move_best_from_b_to_a(t_data *a, t_data *b);
-
-/* ************************************************************************** */
-/* FINAL STEP                                   */
-/* ************************************************************************** */
-
-void	rotate_to_min(t_data *a);
+void	execute_move(t_data *a, t_data *b, int cost_a, int cost_b);
 
 /* ************************************************************************** */
 /* MAIN ALGORITHM                                 */
